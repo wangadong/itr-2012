@@ -9,13 +9,11 @@
 public class Employe extends Personne {
 
 	/**
-	 * numŽro d'employŽ
-	 */
+	 * numï¿½o d'employï¿½	 */
 	private int numero;
 	
 	/**
-	 * Entreprise dans laquelle travaille l'employŽ
-	 */
+	 * Entreprise dans laquelle travaille l'employï¿½	 */
 	Entreprise entreprise;
 	
 	/**
@@ -66,13 +64,13 @@ public class Employe extends Personne {
 	public String toString() {
 		// TODO Auto-generated method stub
 		return super.toString()+" - travaille chez "+entreprise.getNom()+
-		", numŽro "+this.numero;
+		", numï¿½o "+this.numero;
 	}
 
 	public static void main(String[] args) {
 		Entreprise comac = new Entreprise("Comac");
 		Employe e1 = new Employe("Dassault","Marcel",true,1910,354,comac);
-		Employe e2 = new Employe("Sarkozy","Nicolas",true,1940,335, comac);
+		Employe e2 = new Employe("Pang","Lei",false,1988,335, comac);
 		
 		System.out.println(e1);
 		System.out.println(e2);
