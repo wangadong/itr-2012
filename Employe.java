@@ -10,7 +10,7 @@ public class Employe extends Personne {
 
 	/**
 	 * num�o d'employ�	 */
-	private int numero;
+	private int numero123;
 	
 	/**
 	 * Entreprise dans laquelle travaille l'employ�	 */
