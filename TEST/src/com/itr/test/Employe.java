@@ -65,16 +65,19 @@ public class Employe extends Personne {
 	public String toString() {
 		// TODO Auto-generated method stub
 		return super.toString()+" - travaille chez "+entreprise.getNom()+
-		", numï¿? "+this.numero;
+		", numero "+this.numero;
 	}
 
 	public static void main(String[] args) {
 		Entreprise comac = new Entreprise("Comac");
 		Employe e1 = new Employe("Dassault","Marcel",true,1910,354,comac);
 		Employe e2 = new Employe("Pang","Lei",false,1988,335, comac);
-		
+		Manager m1= new Manager("Ma", "Pang", false, 1988, 1, comac, null);
+		m1.addNewEmploye(e2);
+		m1.addNewEmploye(e1);
 		System.out.println(e1);
 		System.out.println(e2);
+		System.out.println(m1.toString());
 		
 	}
 

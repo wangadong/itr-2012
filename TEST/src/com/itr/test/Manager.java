@@ -12,12 +12,15 @@ public class Manager extends Employe {
 			int numero, Entreprise entreprise, Manager boss) {
 		super(nom, prenom, sexe, anneeNaissance, numero, entreprise);
 		this.setBoss(boss);
-		employeList = new ArrayList<Employe>();
+		this.employeList = new ArrayList<Employe>();
 		// TODO Auto-generated constructor stub
 	}
 
 	public void addNewEmploye(Employe employe) {
-		employeList.add(employe);
+		this.employeList.add(employe);
+		if (employe instanceof Manager) {
+			((Manager) employe).setBoss(this);
+		}
 	}
 
 	public Manager getBoss() {
@@ -30,7 +33,7 @@ public class Manager extends Employe {
 
 	@Override
 	public String toString() {
-		String str = super.toString() + "Sous ordre de " + this.boss.getNom()
+		String str = super.toString() + (boss!=null?(" Sous ordre de " + this.boss.getNom()):" Patron de l'entreprise ")
 				+ "qui s'occupe de " + employeList.size() + " employes.";
 		return str;
 	}
