@@ -22,7 +22,16 @@ public class Manager extends Employe {
 			((Manager) employe).setBoss(this);
 		}
 	}
-
+public void afficherHierarchie(){
+	if(this.boss!=null){
+			System.out.println(this.getNom() + " a pour chef "
+					+ this.boss.getNom());
+			this.boss.afficherHierarchie();
+	}else{
+		System.out.println(this.getNom()+" est le patron");
+	}
+	
+}
 	public Manager getBoss() {
 		return boss;
 	}

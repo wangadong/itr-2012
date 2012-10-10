@@ -72,13 +72,11 @@ public class Employe extends Personne {
 		Entreprise comac = new Entreprise("Comac");
 		Employe e1 = new Employe("Dassault","Marcel",true,1910,354,comac);
 		Employe e2 = new Employe("Pang","Lei",false,1988,335, comac);
-		Manager m1= new Manager("Ma", "Pang", false, 1988, 1, comac, null);
-		m1.addNewEmploye(e2);
-		m1.addNewEmploye(e1);
-		System.out.println(e1);
-		System.out.println(e2);
-		System.out.println(m1.toString());
-		
+		Manager m1= new Manager("Ma1", "Pang", false, 1988, 1, comac, null);
+		Manager m2= new Manager("Ma2", "Pang", false, 1988, 1, comac, m1);
+		Manager m3= new Manager("Ma3", "Pang", false, 1988, 1, comac, m2);
+		Manager m4= new Manager("Ma4", "Pang", false, 1988, 1, comac, m3);
+		m4.afficherHierarchie();
 	}
 
 }
