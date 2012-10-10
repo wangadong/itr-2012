@@ -32,6 +32,16 @@ public void afficherHierarchie(){
 	}
 	
 }
+public int nombreEmployes(){
+	int nombre=employeList.size();
+	for(Employe employe:this.employeList){
+		if(employe instanceof Manager){
+			nombre+=((Manager) employe).nombreEmployes();
+		}
+	}
+	return nombre;
+	
+}
 	public Manager getBoss() {
 		return boss;
 	}
