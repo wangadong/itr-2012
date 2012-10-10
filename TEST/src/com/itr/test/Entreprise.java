@@ -1,3 +1,4 @@
+package com.itr.test;
 /**
  * 
  */
@@ -27,7 +28,7 @@ public class Entreprise {
 	}
 	
 	/**
-	 * constructeur qui cre une entreprise
+	 * constructeur qui cr? une entreprise
 	 */
 	public Entreprise(String nom) {
 		this.nom = nom;

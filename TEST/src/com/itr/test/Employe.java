@@ -1,3 +1,4 @@
+package com.itr.test;
 /**
  * 
  */
@@ -9,11 +10,11 @@
 public class Employe extends Personne {
 
 	/**
-	 * numï¿½o d'employï¿½	 */
+	 * numï¿? d'employï¿? */
 	private int numero;
 	
 	/**
-	 * Entreprise dans laquelle travaille l'employï¿½	 */
+	 * Entreprise dans laquelle travaille l'employï¿? */
 	Entreprise entreprise;
 	
 	/**
@@ -64,7 +65,7 @@ public class Employe extends Personne {
 	public String toString() {
 		// TODO Auto-generated method stub
 		return super.toString()+" - travaille chez "+entreprise.getNom()+
-		", numï¿½o "+this.numero;
+		", numï¿? "+this.numero;
 	}
 
 	public static void main(String[] args) {

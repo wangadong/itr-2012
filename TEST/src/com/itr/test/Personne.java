@@ -1,10 +1,11 @@
+package com.itr.test;
 /**
  * Ceci est le fichier de ma classe Personne
  */
 
 /**
  * @author moreau
- * une classe Personne qui va définir les informations relatives à une Personne
+ * une classe Personne qui va d?inir les informations relatives ?une Personne
  */
 public class Personne {
 	
@@ -14,7 +15,7 @@ public class Personne {
 	private String nom;
 	
 	/**
-	 *  Le prénom de la personne
+	 *  Le pr?om de la personne
 	 */
 	private String prenom;
 	
@@ -24,7 +25,7 @@ public class Personne {
 	private boolean sexe;
 	
 	/**
-	 *  L'année de naissance de la personne
+	 *  L'ann? de naissance de la personne
 	 */
 	private int anneeNaissance;
 	
