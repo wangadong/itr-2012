@@ -68,7 +68,7 @@ public class Employe extends Personne {
 		", numero "+this.numero;
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws PasDEmployeException {
 		Entreprise comac = new Entreprise("Comac");
 		Employe e1 = new Employe("Dassault","Marcel",true,1910,354,comac);
 		Employe e2 = new Employe("Pang","Lei",false,1988,3351, comac);

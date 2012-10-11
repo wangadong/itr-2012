@@ -56,7 +56,7 @@ public class Manager extends Employe {
 	public int nombreDeFemmes() {
 		int nombreDeFemmes = 0;
 		for (Employe employe : this.employeList) {
-			if(!employe.isSexe()){
+			if (!employe.isSexe()) {
 				nombreDeFemmes++;
 			}
 			if (employe instanceof Manager) {
@@ -65,8 +65,15 @@ public class Manager extends Employe {
 		}
 		return nombreDeFemmes;
 	}
-	public float pourcentageDeFemmes(){
-		return (float)this.nombreDeFemmes()/(float)this.nombreEmployes();
+
+	public float pourcentageDeFemmes() throws PasDEmployeException {
+		int nf = nombreDeFemmes();
+		int ne = nombreEmployes();
+		if (ne == 0) {
+			throw new PasDEmployeException();
+		}
+		float r = ((float) nf / (float) ne) * 100f;
+		return r;
 	}
 
 	@Override
