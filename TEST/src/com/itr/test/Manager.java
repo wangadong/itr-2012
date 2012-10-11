@@ -56,7 +56,7 @@ public class Manager extends Employe {
 	public int nombreDeFemmes() {
 		int nombreDeFemmes = 0;
 		for (Employe employe : this.employeList) {
-			if(employe.isSexe()==false){
+			if(!employe.isSexe()){
 				nombreDeFemmes++;
 			}
 			if (employe instanceof Manager) {

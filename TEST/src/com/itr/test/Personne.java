@@ -8,7 +8,7 @@ package com.itr.test;
  * @author moreau une classe Personne qui va d?inir les informations relatives
  *         ?une Personne
  */
-public class Personne {
+public class Personne implements Contactable {
 
 	/**
 	 * Le nom de la personne
@@ -29,6 +29,9 @@ public class Personne {
 	 * L'ann? de naissance de la personne
 	 */
 	private int anneeNaissance;
+	private ContactTelephonique tele;
+	private ContactMail mail;
+	private ContactPoste poste;
 
 	/**
 	 * @return the nom
@@ -114,14 +117,24 @@ public class Personne {
 		this.anneeNaissance = anneeNaissance;
 	}
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		Personne p = new Personne("Moreau", "Guillaume", true, 1973);
+	@Override
+	public void setContactInfo(Contact contact) {
+		// TODO Auto-generated method stub
+		if(contact instanceof ContactTelephonique){
+			this.tele=(ContactTelephonique) contact;
+		}else if(contact instanceof ContactMail){
+			this.mail=(ContactMail)contact;
+		}else if(contact instanceof ContactPoste){
+			this.poste=(ContactPoste)contact;
+		}
 
-		System.out.println(p);
+	}
 
+	@Override
+	public Contact[] getContactInfo() {
+		// TODO Auto-generated method stub
+		Contact[] contacts={this.tele,this.mail,this.poste};
+		return contacts;
 	}
 
 }
