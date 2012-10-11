@@ -82,7 +82,9 @@ public class Employe extends Personne {
 		m4.addNewEmploye(e1);
 		m4.addNewEmploye(e2);
 		System.out.println(m1.nombreEmployes());
-		m4.afficherHierarchie();
+//		m4.afficherHierarchie();
+		System.out.println(m1.pourcentageDeFemmes());
+		
 	}
 
 }

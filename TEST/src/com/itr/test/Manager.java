@@ -22,26 +22,29 @@ public class Manager extends Employe {
 			((Manager) employe).setBoss(this);
 		}
 	}
-public void afficherHierarchie(){
-	if(this.boss!=null){
+
+	public void afficherHierarchie() {
+		if (this.boss != null) {
 			System.out.println(this.getNom() + " a pour chef "
 					+ this.boss.getNom());
 			this.boss.afficherHierarchie();
-	}else{
-		System.out.println(this.getNom()+" est le patron");
-	}
-	
-}
-public int nombreEmployes(){
-	int nombre=employeList.size();
-	for(Employe employe:this.employeList){
-		if(employe instanceof Manager){
-			nombre+=((Manager) employe).nombreEmployes();
+		} else {
+			System.out.println(this.getNom() + " est le patron");
 		}
+
 	}
-	return nombre;
-	
-}
+
+	public int nombreEmployes() {
+		int nombre = employeList.size();
+		for (Employe employe : this.employeList) {
+			if (employe instanceof Manager) {
+				nombre += ((Manager) employe).nombreEmployes();
+			}
+		}
+		return nombre;
+
+	}
+
 	public Manager getBoss() {
 		return boss;
 	}
@@ -50,10 +53,28 @@ public int nombreEmployes(){
 		this.boss = boss;
 	}
 
+	public int nombreDeFemmes() {
+		int nombreDeFemmes = 0;
+		for (Employe employe : this.employeList) {
+			if(employe.isSexe()==false){
+				nombreDeFemmes++;
+			}
+			if (employe instanceof Manager) {
+				nombreDeFemmes += ((Manager) employe).nombreDeFemmes();
+			}
+		}
+		return nombreDeFemmes;
+	}
+	public float pourcentageDeFemmes(){
+		return (float)this.nombreDeFemmes()/(float)this.nombreEmployes();
+	}
+
 	@Override
 	public String toString() {
-		String str = super.toString() + (boss!=null?(" Sous ordre de " + this.boss.getNom()):" Patron de l'entreprise ")
-				+ "qui s'occupe de " + employeList.size() + " employes.";
+		String str = super.toString()
+				+ (boss != null ? (" Sous ordre de " + this.boss.getNom())
+						: " Patron de l'entreprise ") + "qui s'occupe de "
+				+ employeList.size() + " employes.";
 		return str;
 	}
 
