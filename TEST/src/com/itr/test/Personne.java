@@ -29,9 +29,8 @@ public class Personne implements Contactable {
 	 * L'ann? de naissance de la personne
 	 */
 	private int anneeNaissance;
-	private ContactTelephonique tele;
-	private ContactMail mail;
-	private ContactPoste poste;
+
+	private Contact contact;
 
 	/**
 	 * @return the nom
@@ -120,21 +119,20 @@ public class Personne implements Contactable {
 	@Override
 	public void setContactInfo(Contact contact) {
 		// TODO Auto-generated method stub
-		if(contact instanceof ContactTelephonique){
-			this.tele=(ContactTelephonique) contact;
-		}else if(contact instanceof ContactMail){
-			this.mail=(ContactMail)contact;
-		}else if(contact instanceof ContactPoste){
-			this.poste=(ContactPoste)contact;
-		}
+		this.contact = contact;
 
 	}
 
 	@Override
-	public Contact[] getContactInfo() {
+	public Contact getContactInfo() throws NoContactInfoException {
 		// TODO Auto-generated method stub
-		Contact[] contacts={this.tele,this.mail,this.poste};
-		return contacts;
+		if (this.contact != null) {
+
+			Contact contact = this.contact;
+		} else {
+			throw new NoContactInfoException();
+		}
+		return contact;
 	}
 
 }
